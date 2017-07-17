@@ -7,7 +7,7 @@
 
                     <div class="uk-margin">
                         <div class="uk-inline full uk-form-password">
-                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
                             <input id="icon_prefix" type="text" required class="validate uk-input uk-form-width-large full radius" placeholder="Email" >
                         </div>
                     </div>
