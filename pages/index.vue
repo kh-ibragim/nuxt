@@ -1,18 +1,44 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        NUXT
-      </h1>
-      <h2 class="subtitle">
-        Universal Vue.js Application
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-      </div>
-    </div>
+
+        <div class="uk-section  uk-section-large checkin-container">
+            <div class="uk-container">
+                    <form>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline full uk-form-password">
+                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                            <input id="icon_prefix" type="text" required class="validate uk-input uk-form-width-large full radius" placeholder="Email" >
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-inline full">
+                            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                            <input id="password" type="password" required class="validate uk-input uk-form-width-large full radius" placeholder="Password" >
+                        </div>
+                    </div>
+            
+                    <div class="uk-margin">
+                        <div class="full">
+                          <button class="uk-button uk-button-primary uk-button-medium full wave radius" type="submit"  value="Submit">Login
+  		                    </button>
+                        </div>
+                    </div>
+
+                  </form>
+
+                  
+                    <div class="uk-margin">
+                      <div class="full">
+                        <nuxt-link to="/registration"><button class="uk-button uk-button-muted uk-button-medium full wave radius"  type="button">Registration</button></nuxt-link>
+                      </div>
+                    </div>
+              
+         </div>
+        </div>  
+
+
   </section>
 </template>
 
@@ -35,25 +61,28 @@ export default {
   align-items: center;
   text-align: center;
 }
-.title
-{
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+
+.full{
+width: 100%;
 }
-.subtitle
-{
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+
+.wave {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  transition: .3s ease-out;
 }
-.links
-{
-  padding-top: 15px;
+
+.radius{
+    border-radius: 10rem;
 }
+
 </style>
