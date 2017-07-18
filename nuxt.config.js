@@ -12,12 +12,14 @@ module.exports = {
     script: [
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'},
       {  src: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit.min.js'},
-      {  src: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js'}
+      {  src: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/js/uikit-icons.min.js'},
+      {  src: 'https://unpkg.com/leaflet@1.1.0/dist/leaflet.js'}
       
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }, 
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css' }
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.25/css/uikit.min.css' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/leaflet@1.1.0/dist/leaflet.css'}
     ]
   },
   /*
