@@ -3,7 +3,7 @@
 
         <div class="uk-section  uk-section-large checkin-container">
             <div class="uk-container">
-                    <form>
+                    <form @submit="login"> 
 
                     <div class="uk-margin">
                         <div class="uk-inline full uk-form-password">
@@ -43,13 +43,7 @@
 </template>
 
 <script>
-import Logo from '~components/Logo.vue'
 
-export default {
-  components: {
-    Logo
-  }
-}
 </script>
 
 <style>
