@@ -1,15 +1,19 @@
 <template>
             <div  class="uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-small uk-grid-match uk-margin-top uk-margin-left" data-uk-grid data-uk-scrollspy="cls: uk-animation-fade; target: > div > .uk-card; delay: 500; repeat: true">
-
+            <!--user create new meeting -->
+            <NewMeetings />
+            <!--first user meeting-->
             <div>
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="http://young.scot/media/5781/istock_000041478802_xxxlarge.jpg" alt="">
+                    <div class="uk-inline-clip uk-transition-toggle">
+                        <img src="http://young.scot/media/5781/istock_000041478802_xxxlarge.jpg" alt="">
+                            <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                                <p class="uk-h4 uk-margin-remove">Meeting Name</p>
+                            </div>
+                    </div>
                 </div>
-                <div class="uk-card-body">
-                    <h3 class="uk-card-title">Media Top</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                </div>
+
                 <div class="uk-card-footer">
                     <a class="uk-button uk-button-text" href="#modal-full" uk-toggle>More</a>
                         <div id="modal-full" class="uk-modal-full" uk-modal>
@@ -31,6 +35,16 @@
 
             </div>
 </template>
+
+<script>
+import NewMeetings from '~components/NewMeetings.vue'
+
+export default {
+  components: {
+    NewMeetings
+  }
+}
+</script>
 
 <style>
 
