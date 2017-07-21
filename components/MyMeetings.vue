@@ -9,14 +9,15 @@
                     <div class="uk-inline-clip uk-transition-toggle">
                         <img src="http://young.scot/media/5781/istock_000041478802_xxxlarge.jpg" alt="">
                             <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
-                                <p class="uk-h4 uk-margin-remove">Meeting Name</p>
+                                <p class="uk-h4 uk-margin-remove">Meet Description</p>
                             </div>
                     </div>
                 </div>
 
-                <div class="uk-card-footer">
-                    <a class="uk-button uk-button-text" href="#modal-full" uk-toggle>More</a>
-                        <div id="modal-full" class="uk-modal-full" uk-modal>
+                <div class="uk-card-footer uk-padding-remove-bottom">
+                    Meet Name
+                    <a class="uk-button uk-button-text uk-align-right uk-padding-remove-bottom" href="#modal-full-meet-first" uk-toggle>More</a>
+                        <div id="modal-full-meet-first" class="uk-modal-full" uk-modal>
                             <div class="uk-modal-dialog">
                                 <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
                                     <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
