@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import NewGossip from '~components/NewGossip.vue'
+import NewGossip from '../components/NewGossip.vue'
 
 export default {
   components: {
