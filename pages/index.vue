@@ -8,20 +8,20 @@
                     <div class="uk-margin">
                         <div class="uk-inline full uk-form-password">
                             <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                            <input id="icon_prefix" type="text" required class="validate uk-input uk-form-width-large full radius" placeholder="Email" >
+                            <input id="icon_prefix" type="text" required class="validate uk-input uk-form-width-large full radius" placeholder="Email" v-model="email">
                         </div>
                     </div>
 
                     <div class="uk-margin">
                         <div class="uk-inline full">
                             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-                            <input id="password" type="password" required class="validate uk-input uk-form-width-large full radius" placeholder="Password" >
+                            <input id="password" type="password" required class="validate uk-input uk-form-width-large full radius" placeholder="Password" v-model="password">
                         </div>
                     </div>
             
                     <div class="uk-margin">
                         <div class="full">
-                          <button class="uk-button uk-button-primary uk-button-medium full wave radius" type="submit"  value="Submit">Login
+                          <button class="uk-button uk-button-primary uk-button-medium full wave radius" type="submit"2>Login
   		                    </button>
                         </div>
                     </div>
@@ -43,7 +43,42 @@
 </template>
 
 <script>
+  import axios from 'axios'
+  import feathers from 'feathers/client'
+  import socketio from 'feathers-socketio/client'
+  import io from 'socket.io-client'
 
+  export default {
+    data () {
+      // return axios.post('http://localhost:3030/authentication', {
+      //   strategy: 'local',
+      //   email: this.email,
+      //   password: this.password
+      // }).then((response) => {
+      //   return { authentication: response.data.data, email: '', password: '' }
+      // })
+    },
+    methods: {
+      login: function (e) {
+        e.preventDefault()
+
+        return axios.post('http://localhost:3030/authentication', {
+          strategy: 'local',
+          email: this.email,
+          password: this.password
+        }).then((response) => {
+          console.log(response.data.accessToken)
+          return { authentication: response.data }
+        })
+      }
+    },
+    mounted () {
+      const app = feathers().configure(socketio(io('http://localhost:3030')))
+      app.service('authentication').on('created', (message) => {
+        console.log(message)
+      })
+    }
+  }
 </script>
 
 <style>
