@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import Logo from '~components/Logo.vue'
-import Account from '~components/Account.vue'
-import Navigation from '~components/Navigation.vue'
-import Life from '~components/Life.vue'
-import Meetings from '~components/Meetings.vue'
-import My from '~components/My.vue'
-import Messages from '~components/Messages.vue'
+import Logo from '../components/Logo.vue'
+import Account from '../components/Account.vue'
+import Navigation from '../components/Navigation.vue'
+import Life from '../components/Life.vue'
+import Meetings from '../components/Meetings.vue'
+import My from '../components/My.vue'
+import Messages from '../components/Messages.vue'
 
 export default {
   components: {

@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import NewMeetings from '~components/NewMeetings.vue'
+import NewMeetings from '../components/NewMeetings.vue'
 
 export default {
   components: {

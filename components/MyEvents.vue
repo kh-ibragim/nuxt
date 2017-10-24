@@ -136,7 +136,7 @@
 </template>
 
 <script>
-import NewEvents from '~components/NewEvents.vue'
+import NewEvents from '../components/NewEvents.vue'
 
 export default {
   components: {

@@ -19,10 +19,10 @@
 
 
 <script>
-import MyEvents from '~components/MyEvents.vue'
-import MyMeetings from '~components/MyMeetings.vue'
-import MyInstitutions from '~components/MyInstitutions.vue'
-import MyGossips from '~components/MyGossips.vue'
+import MyEvents from '../components/MyEvents.vue'
+import MyMeetings from '../components/MyMeetings.vue'
+import MyInstitutions from '../components/MyInstitutions.vue'
+import MyGossips from '../components/MyGossips.vue'
 
 export default {
   components: {
