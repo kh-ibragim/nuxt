@@ -49,10 +49,11 @@
   import io from 'socket.io-client'
 
 export default {
-    asyncData (context) {
-      // const redirect = context.redirect
-    },
-    // data () {
+    data () {
+      console.log(this.$store.state.token)
+      if (this.$store.state.token != null) {
+        this.$router.push('profile')
+      }
     //   // return axios.post('http://localhost:3030/authentication', {
     //   //   strategy: 'local',
     //   //   email: this.email,
@@ -60,7 +61,7 @@ export default {
     //   // }).then((response) => {
     //   //   return { authentication: response.data.data, email: '', password: '' }
     //   // })
-    // },
+    },
     methods: {
       login: function (e) {
         e.preventDefault()
@@ -70,7 +71,7 @@ export default {
           email: this.email,
           password: this.password
         }).then((response) => {
-          window.localStorage.setItem('rr_login', response.data.accessToken)
+          this.$store.commit('LOGIN', response.data.accessToken)
           console.log(response.data.accessToken)
           this.$router.push('profile')
         })

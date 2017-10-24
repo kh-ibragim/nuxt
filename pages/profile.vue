@@ -37,6 +37,13 @@ import My from '../components/My.vue'
 import Messages from '../components/Messages.vue'
 
 export default {
+  middleware: 'auth',
+  data () {
+    console.log(this.$store.state.token)
+    // if (this.$store.state.token == null) {
+    //   this.$router.push('/')
+    // }
+  },
   components: {
     Logo,
     Account,
