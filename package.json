@@ -5,8 +5,11 @@
   "author": "kh-bragim <ibragim2010@list.ru>",
   "private": true,
   "dependencies": {
+    "feathers": "^2.2.3",
+    "feathers-client": "^2.4.0",
+    "feathers-socketio": "^2.0.0",
     "nuxt": "latest",
-    "socket.io-client": "^2.0.3"
+    "socket.io-client": "^2.0.4"
   },
   "scripts": {
     "dev": "nuxt",

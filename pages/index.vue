@@ -43,7 +43,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  // import axios from 'axios'
   import feathers from 'feathers/client'
   import socketio from 'feathers-socketio/client'
   import io from 'socket.io-client'
@@ -54,28 +54,31 @@ export default {
       if (this.$store.state.token != null) {
         this.$router.push('profile')
       }
-    //   // return axios.post('http://localhost:3030/authentication', {
-    //   //   strategy: 'local',
-    //   //   email: this.email,
-    //   //   password: this.password
-    //   // }).then((response) => {
-    //   //   return { authentication: response.data.data, email: '', password: '' }
-    //   // })
     },
     methods: {
       login: function (e) {
         e.preventDefault()
 
-        return axios.post('http://localhost:3030/authentication', {
+        // return axios.post('http://localhost:3030/authentication', {
+        //   strategy: 'local',
+        //   email: this.email,
+        //   password: this.password
+        // }).then((response) => {
+        //   this.$store.commit('LOGIN', response.data.accessToken)
+        //   console.log(response.data.accessToken)
+        //   this.$router.push('profile')
+        // })
+        // .catch((error) => { alert(error) })
+        const socket = io('http://localhost:3030')
+        socket.emit('authenticate', {
           strategy: 'local',
           email: this.email,
           password: this.password
-        }).then((response) => {
-          this.$store.commit('LOGIN', response.data.accessToken)
-          console.log(response.data.accessToken)
+        }, function (message, data) {
+          console.log(data.accessToken)
+          this.$store.commit('LOGIN', data.accessToken)
           this.$router.push('profile')
         })
-        .catch((error) => { alert(error) })
       }
     },
     mounted () {
