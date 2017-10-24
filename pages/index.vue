@@ -48,16 +48,19 @@
   import socketio from 'feathers-socketio/client'
   import io from 'socket.io-client'
 
-  export default {
-    data () {
-      // return axios.post('http://localhost:3030/authentication', {
-      //   strategy: 'local',
-      //   email: this.email,
-      //   password: this.password
-      // }).then((response) => {
-      //   return { authentication: response.data.data, email: '', password: '' }
-      // })
+export default {
+    asyncData (context) {
+      // const redirect = context.redirect
     },
+    // data () {
+    //   // return axios.post('http://localhost:3030/authentication', {
+    //   //   strategy: 'local',
+    //   //   email: this.email,
+    //   //   password: this.password
+    //   // }).then((response) => {
+    //   //   return { authentication: response.data.data, email: '', password: '' }
+    //   // })
+    // },
     methods: {
       login: function (e) {
         e.preventDefault()
@@ -67,9 +70,11 @@
           email: this.email,
           password: this.password
         }).then((response) => {
+          window.localStorage.setItem('rr_login', response.data.accessToken)
           console.log(response.data.accessToken)
-          return { authentication: response.data }
+          this.$router.push('profile')
         })
+        .catch((error) => { alert(error) })
       }
     },
     mounted () {
